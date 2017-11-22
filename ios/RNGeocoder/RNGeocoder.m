@@ -34,7 +34,7 @@ RCT_EXPORT_METHOD(geocodePosition:(CLLocation *)location
     [self.geocoder cancelGeocode];
   }
 
-  [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+    [self.geocoder reverseGeocodeLocation:location preferredLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] completionHandler:^(NSArray *placemarks, NSError *error) {
 
     if (error) {
       if (placemarks.count == 0) {
