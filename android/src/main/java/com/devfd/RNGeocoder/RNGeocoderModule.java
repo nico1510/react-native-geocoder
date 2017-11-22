@@ -15,6 +15,7 @@ import com.facebook.react.bridge.WritableNativeMap;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
 public class RNGeocoderModule extends ReactContextBaseJavaModule {
 
@@ -22,7 +23,7 @@ public class RNGeocoderModule extends ReactContextBaseJavaModule {
 
     public RNGeocoderModule(ReactApplicationContext reactContext) {
         super(reactContext);
-        geocoder = new Geocoder(reactContext.getApplicationContext());
+        geocoder = new Geocoder(reactContext.getApplicationContext(), Locale.US);
     }
 
     @Override
